@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户注册</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="divMain">
+      <div id="divTitle"><span id="sapnTitle">新用户注册</span></div>
+      <div class="form_div" id="divBody">
+        <form action="" method="post">
+          <div class="divLine">
+            <span class="form_left">用户名</span>
+            <input type="text" class="msg_input" id="user_name" />
+            <label for="" class="errorMSG bgimg" id="user_name_error"></label>
+          </div>
+          <div class="divLine">
+            <span class="form_left">密码</span>
+            <input type="password" class="msg_input" id="user_password" />
+            <label
+              for=""
+              class="errorMSG bgimg"
+              id="user_password_error"
+            ></label>
+          </div>
+          <div class="divLine">
+            <span class="form_left">确认密码</span>
+            <input type="password" class="msg_input" id="user_repassword" />
+            <label
+              for=""
+              class="errorMSG bgimg"
+              id="user_repassword_error"
+            ></label>
+          </div>
+          <div class="divLine">
+            <span class="form_left">电子邮箱</span>
+            <input type="email" class="msg_input" id="user_email" />
+            <label for="" class="errorMSG bgimg" id="user_email_error"></label>
+          </div>
+          <div class="divLine">
+            <span class="form_left"></span>
+            <button id="btn">注册新用户</button>
+            <label for=""></label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

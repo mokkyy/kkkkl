@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线商城</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      * {
+        height: 100vh;
+        margin: 0;
+      }
+      a {
+        color: #666;
+        text-decoration: none;
+        padding: 15px 15px;
+        line-height: 40px;
+      }
+      a:hover {
+        color: #c81623;
+      }
+      /* 去掉li 的小圆点 */
+      li {
+        list-style: none;
+      }
+      .yinying {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+      }
+    </style>
+  </head>
+  <body style="display: flex; height: 100vh">
+    <!-- 左侧 -->
+    <div style="width: 375px; display: flex">
+      <img src="1.jpg" alt="" style="flex: 1" />
+    </div>
+    <!-- 右侧 -->
+    <div style="flex: 1; display: flex; flex-direction: column">
+      <!-- 头部 -->
+      <div style="height: 40px; padding: 20px 0; display: flex">
+        <span
+          style="
+            color: #666666;
+            padding: 0 60px;
+            font-size: 26px;
+            line-height: 40px;
+            flex: 1;
+          "
+          >在线商城</span
+        >
+        <span style="position: absolute; right: 0; flex: 1"
+          ><a href="#">用户协议</a><a href="#">隐私政策</a
+          ><a href="#">帮助中心</a></span
+        >
+      </div>
+      <!-- 注册区 -->
+      <div style="flex: 1">
+        <div
+          style="
+            width: 485px;
+            margin: 0 auto;
+            border-radius: 5px;
+            height: 430px;
+            display: flex;
+            flex-direction: column;
+          "
+          class="yinying"
+        >
+          <!-- 第一行 -->
+          <div style="flex: 1">
+            <span
+              style="
+                color: #ff5c00;
+                padding: 20px;
+                font-size: 35px;
+                border-bottom: 2px solid #ff5c00;
+              "
+              >注册</span
+            >
+            <a href="登录页面.HTML">登录</a>
+          </div>
+          <!--第二行 -->
+          <div style="flex: 1">
+            <input
+              type="text"
+              style="
+                width: 360px;
+                height: 60px;
+                border: 0;
+                margin: 0 20px 20px 20px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #f7f7f7;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #666666;
+              "
+              placeholder="在此输入字母和数字组成，最少8位用户名："
+              id="yhm"
+            />
+          </div>
+          <!-- 第三行 -->
+          <div style="flex: 1">
+            <input
+              type="password"
+              style="
+                width: 360px;
+                height: 60px;
+                border: 0;
+                margin: 0 20px 20px 20px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #f7f7f7;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #666666;
+              "
+              placeholder="在此输入不小于6位数的密码："
+              id="mm"
+            />
+          </div>
+          <!-- 第四行 -->
+          <div style="flex: 1">
+            <input
+              type="password"
+              style="
+                width: 360px;
+                height: 60px;
+                border: 0;
+                margin: 0 20px 20px 20px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #f7f7f7;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #666666;
+              "
+              placeholder="再输入一次密码："
+              id="mmi"
+            />
+          </div>
+          <!-- 第五行 -->
+          <div style="flex: 1">
+            <button
+              style="
+                width: 360px;
+                height: 50px;
+                box-sizing: border-box;
+                margin: 0 20px 20px 20px;
+                background-color: #ff5c00;
+                border: 0;
+                color: #666666;
+                font-size: 20px;
+                filter: blur(1px);
+                cursor: pointer;
+              "
+              id="btn"
+            >
+              提交注册
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#btn").click(function () {
+      const username = $("#yhm").val();
+      const password = $("#mm").val();
+      const passwordi = $("#mmi").val();
+      console.log(username, password, passwordi);
+      if (username.length < 8) {
+        alert("长度小于8位");
+        return;
+      }
+      if (password != passwordi) {
+        alert("两次密码不一致！");
+        return; //阻止代码继续执行
+      }
+      /*
+      注册用户：http://hmajax.itheima.net/api/register
+      请求方法：POST
+      参数名：
+        username：用户名（中英文和数字组成，最少8位）
+        password：密码  （最少6位）
+
+      目标：点击按钮，通过axios提交用户和密码，完成注册
+    */
+      axios({
+        url: "http://hmajax.itheima.net/api/register",
+        method: "POST",
+        data: {
+          username: username,
+          password: password,
+        },
+      })
+        .then((result) => {
+          console.log(result);
+          alert("注册成功！");
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("注册失败，请重新输入！");
+        });
+    });
+  </script>
+</html>

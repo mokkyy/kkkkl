@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线商城</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      * {
+        height: 100vh;
+        margin: 0;
+      }
+      a {
+        color: #666;
+        text-decoration: none;
+        padding: 15px 15px;
+        line-height: 40px;
+      }
+      a:hover {
+        color: #c81623;
+      }
+      /* 去掉li 的小圆点 */
+      li {
+        list-style: none;
+      }
+      .yinying {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+      }
+    </style>
+  </head>
+  <body style="display: flex; height: 100vh">
+    <!-- 左侧 -->
+    <div style="width: 375px; display: flex">
+      <img src="1.jpg" alt="" style="flex: 1" />
+    </div>
+    <!-- 右侧 -->
+    <div style="flex: 1; display: flex; flex-direction: column">
+      <!-- 头部 -->
+      <div style="height: 40px; padding: 20px 0; display: flex">
+        <span
+          style="
+            color: #666666;
+            padding: 0 60px;
+            font-size: 26px;
+            line-height: 40px;
+            flex: 1;
+          "
+          >在线商城</span
+        >
+        <span style="position: absolute; right: 0; flex: 1"
+          ><a href="#">用户协议</a><a href="#">隐私政策</a
+          ><a href="#">帮助中心</a></span
+        >
+      </div>
+      <!-- 注册区 -->
+      <div style="flex: 1">
+        <div
+          style="
+            width: 485px;
+            margin: 20px auto;
+            border-radius: 5px;
+            height: 430px;
+            display: flex;
+            flex-direction: column;
+          "
+          class="yinying"
+        >
+          <!-- 第一行 -->
+          <div style="flex: 1">
+            <span
+              style="
+                color: #ff5c00;
+                padding: 20px;
+                font-size: 35px;
+                border-bottom: 2px solid #ff5c00;
+              "
+              >登录</span
+            >
+          </div>
+          <!-- 提示信息区 -->
+          <div
+            style="
+              height: 50px;
+              width: 360px;
+              box-sizing: border-box;
+              margin: 0 20px 20px 20px;
+              font-size: 15px;
+              color: #666;
+              padding-left: 15px;
+              display: none;
+              box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+              background-color: #f7f7f7;
+              border-radius: 5px;
+              text-align: center;
+              line-height: 40px;
+            "
+            id="ts"
+          ></div>
+          <!--第二行 -->
+          <div style="flex: 1">
+            <input
+              type="text"
+              style="
+                width: 360px;
+                height: 60px;
+                border: 0;
+                margin: 0 20px 20px 20px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #f7f7f7;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #666666;
+                border-radius: 5px;
+                outline: none;
+              "
+              placeholder="  在此输入用户名："
+              id="yhm"
+            />
+          </div>
+          <!-- 第三行 -->
+          <div style="flex: 1">
+            <input
+              type="password"
+              style="
+                width: 360px;
+                height: 60px;
+                border: 0;
+                margin: 0 20px 20px 20px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #f7f7f7;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #666666;
+                border-radius: 5px;
+                outline: none;
+              "
+              placeholder="  在此输入密码："
+              id="mm"
+            />
+          </div>
+          <!-- 第四行 -->
+
+          <!-- 第五行 -->
+          <div style="flex: 1">
+            <button
+              href="../index.html"
+              style="
+                width: 360px;
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                  rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                  rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+                background-color: #ff5c00;
+                margin: 0 20px 20px 20px;
+                display: inline-block;
+                height: 40px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 20px;
+                color: #f7f7f7;
+                border: 0;
+                cursor: pointer;
+              "
+              id="btn"
+            >
+              点击登录
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function alertFn(msg, issSucces) {
+      // 显示提示信息
+      $("#ts").css("display", "block");
+      // 动态提示文字
+      $("#ts").html(msg);
+      const bgstyle = issSucces ? "#00CCCC" : " #FFE0E0";
+      $("#ts").css("background-color", bgstyle);
+      // 过两秒消失
+      setTimeout(() => {
+        $("#ts").css("display", "none");
+      }, 2000);
+    }
+
+    $("#btn").click(function () {
+      const username = $("#yhm").val();
+      const password = $("#mm").val();
+      if (username.length < 8) {
+        alertFn("用户名必须大于等于8位", false);
+        console.log("用户名必须大于等于8位:" + username);
+        return; // 阻止代码继续执行
+      }
+      if (password < 6) {
+        alertFn("密码必须大于6位", false);
+        console.log("密码：" + password);
+        return;
+      }
+
+      axios({
+        url: "http://hmajax.itheima.net/api/login",
+        method: "POST",
+        data: {
+          username,
+          password,
+        },
+      })
+        .then((result) => {
+          alertFn(result.data.message, true);
+          window.location.href = "../index.html";
+          console.log(result);
+          console.log(result.data.message);
+        })
+        .catch((error) => {
+          alertFn(error.response.data.message, false);
+          console.log(error);
+          console.log(error.response.data.message);
+        });
+    });
+  </script>
+</html>

@@ -1,0 +1,324 @@
+/* 声明字体图标 这里一定要注意路径的变化 ../当前退出文件夹 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?q3kzox');
+    src: url('../fonts/icomoon.eot?q3kzox#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?q3kzox') format('truetype'),
+        url('../fonts/icomoon.woff?q3kzox') format('woff'),
+        url('../fonts/icomoon.svg?q3kzox#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.baise {
+    background-color: #eee;
+}
+
+.flex {
+    display: flex;
+    
+}
+.flex1 {
+    /* 元素将根据可用空间进行自动伸缩。 */
+    flex: 1;  
+}
+.flex2 {
+    /* 元素将根据可用空间进行自动伸缩。 */
+    flex: 2;
+}
+.flex3 {
+    /* 元素将根据可用空间进行自动伸缩。 */
+    flex: 3;
+}
+.flex4 {
+    /* 元素将根据可用空间进行自动伸缩。 */
+    flex: 4;
+}
+.column {
+    /* 元素的排列方向设置为垂直方向 */
+    flex-direction: column; 
+}
+.shouping {
+    /* 元素的排列方向设置为水平方向 */
+    flex-direction: row;
+}
+.mgb{
+    margin-bottom: 15px;
+}
+.marl{
+    margin-left: 15px;
+}
+.margin{
+    margin: 10px;
+}
+
+.toubu{
+    height: 60px;
+}
+.z-index{
+    z-index: 1;
+}
+.overflow {
+    overflow: auto;
+}
+/* 头部栏 */
+.toubu {
+    height: 45px;
+    
+}
+.height{
+    height: 100%;
+}
+.widht{
+    width: 100%;
+}
+.tbmal{
+    font-size: 15px;
+    margin-left: 20px;
+    line-height: 45px;
+}
+.br{
+    border-right: 1px solid #ccc;
+}
+.a{
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+            rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+     border-radius: 5px;
+     background-color: #3498db;
+     color: #FFFFFF;
+     font-size: 15px;
+}
+.jc{
+    width: 600px;
+}
+.b{
+        color: #FFFFFF;
+        font-size: 15px;
+        margin: 0 20px;
+}
+
+.shpocar{
+     box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+        rgb(0 0 0 / 12%) 0px 3px 3px 3px;
+        border-radius: 10px;
+        background-color: #3498db;
+}
+.c{
+    color: #FFFFFF;
+}
+.wc{
+    width: 128px;
+}
+.shpocar::before {
+    margin-right: 5px;
+    font-family: 'icomoon';
+    content: "\e9b0";
+}
+.shpocar::after {
+    margin-left: 5px;
+    font-family: 'icomoon';
+    content: "\ea42";
+}
+.yanse1{
+    background-color: #87CEEB;
+    
+}
+/* 头部栏 */
+ /* 搜索部分  */
+.gaodu2{
+    height: 35px;
+}
+.kuandu{
+    width: 538px;
+}
+.juj{
+    justify-content: center;
+}
+
+.input{
+    padding: 10px ;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+.btn{
+    background-color: #3498db;
+    color: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+}
+.btn:hover{
+    background-color: #2980b9;
+}
+ /* 搜索部分  */
+
+
+
+.table_body_wriapper{
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track{
+        border-radius: 8px;
+        background: rgba(0,0,0,0.05);
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background: #cfcece;
+    }
+}
+
+/* 中间部分 */
+.neirongqu ul li{
+    position: relative;
+    background-color: #55585a;
+    cursor: pointer;
+    
+    line-height: 40px;
+}
+.neirongqu ul li a{
+   margin-left: 5PX;
+   font-size: 13PX;
+    color: aliceblue;
+        /*字体颜色*/
+}
+.neirongqu ul li:hover{
+    background-color: red;
+}
+.neirongqu ul li a::after {
+    position: absolute;
+    top: 1px;
+    right: 13px;
+    font-family: 'icomoon';
+    content: "\ea42";
+
+}
+.neirongqu {
+    height: 100%;
+}
+.gaodu{
+    height: 350px;
+}
+.zj{
+    position: relative;
+}
+img {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.img_on{
+    display: block;
+}
+span{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #ccc;
+    box-sizing: border-box;
+}
+#cir{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.span_on{
+    background: white;
+    border: 1px solid black;
+}
+.xiezi{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 中间部分 */
+
+/* 商品的分类 */
+.shouji {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.yifu {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.gaodu1{
+    height: 600px;
+}
+.zuoce{
+    width: 250px;
+    height: 100%;
+    
+    margin-left: 10px;
+}
+.youce{
+    width: 250px;
+    height: 100%;
+    margin-left: 10px;
+    
+}
+.jg{
+    margin-right: 10px;
+}
+.jg:hover {
+    transform: translateY(-5px);
+    transition: all 0.5s;
+}
+.youce ul li{ 
+    height: 290px;
+}
+.sjdd:hover{
+    transform: translateY(-5px);
+    transition: all 0.5s;
+}
+.sj:hover {
+    transform: translateY(-5px);
+    transition: all 0.5s;
+}
+.p1 {
+    width: 1200px;
+    height: 40px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.p2 {
+    text-align: center;
+    color: black;
+}
+
+.p3 {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.p4 {
+    color: #ff6700;
+    margin-top: 5px;
+    text-align: center;
+}
+.sj{
+    height: 205px;
+    display: block;
+}
+.yf{
+    height: 225px;
+    display: block;
+}
+
+/* 商品的分类 */
+
+/* 网站底座 */
+.gaodu3{
+    height: 200px;
+}
+/* 网站底座 */
